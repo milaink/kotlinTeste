@@ -21,8 +21,13 @@ fun main() {
     testaCondicoes(contaCamila.saldo)
 
     println()
-    contaPedro.saca(600.0)
+    contaPedro.saca(50.0)
 
+    println()
+    contaPedro.transferencia(contaCamila, 100.0 )
+
+    println()
+    mostrarDados(contaCamila)
 }
 
 fun mostrarDados(conta: Conta) {
@@ -55,10 +60,19 @@ class Conta {
             println("Saldo atual: $saldo")
         }
     }
-}
 
-fun testaCopiasEReferencias() {
-
+    fun transferencia(conta: Conta, valor: Double){
+        println("Sacando $valor da conta do(a) titular $titular")
+        if (saldo >= valor) {
+            saldo -= valor
+            println("Depositando $valor da conta do(a) titular ${conta.titular}")
+            conta.saldo += valor
+            println("Saldo atual: $saldo")
+        } else {
+            println("Você não tem saldo suficiente.")
+            println("Saldo atual: $saldo")
+        }
+    }
 }
 
 fun testaLacos() {
