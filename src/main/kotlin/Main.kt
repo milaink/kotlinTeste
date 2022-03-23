@@ -37,14 +37,6 @@ fun main() {
 
 }
 
-fun mostrarDados(conta: Conta) {
-    println("Titular: ${conta.titular}")
-    println("Número: ${conta.numero}")
-    println("Saldo: ${conta.saldo}")
-    println()
-
-}
-
 class Conta {
     var titular = ""
     var numero = 0
@@ -84,23 +76,12 @@ class Conta {
     }
 }
 
-fun testaLacos() {
-    var i = 0
-    while (i <= 5) {
+fun mostrarDados(conta: Conta) {
+    println("Titular: ${conta.titular}")
+    println("Número: ${conta.numero}")
+    println("Saldo: ${conta.saldo}")
+    println()
 
-        val titular: String = "Camila $i"
-        val numeroConta: Int = 1000 + i
-        var saldo = i + 10.0
-
-        //variáveis: mutáveis (var) imutáveis (val)
-        println("Titular $titular")
-        println("O número da conta é $numeroConta")
-        println("Saldo: $saldo")
-        testaCondicoes(saldo)
-        println()
-        i++
-
-    }
 }
 
 fun testaCondicoes(saldo: Double) {
@@ -113,41 +94,3 @@ fun testaCondicoes(saldo: Double) {
     }
 }
 
-/*usando o método when
-when {
-    saldo > 0.0 -> println("a conta é positiva")
-    saldo < 0.0 -> println("a conta é negativa")
-    else -> println("a conta é neutra")
-}
-
-contagem invertida: for (i in 5 downTo 1 step 2) step: pular tantos
-
-for (i in 1..5) { }
-
-if(i == 4){
-    break : para
-    continue : pule o 4
-}
-
- loop@ for (i in 1..100) {
-   println("i $i")
-  for (j in 1..100) {
-       println("j $j")
-       if (j == 5) break@loop
-   }
-}
-
-val numeroX = 10
-var numeroY = numeroX
-numeroY++
-
-val contaJoao = Conta()
-contaJoao.titular = "João"
-val contaMaria = Conta()
-contaMaria.titular = "Maria"
-
-println("titular conta João: ${contaJoao.titular}")
-println("titular conta Maria: ${contaMaria.titular}")
-
-println("numeroX $numeroX")
-println("numeroY $numeroY")*/
