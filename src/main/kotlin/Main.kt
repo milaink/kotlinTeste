@@ -24,12 +24,12 @@ fun main() {
     contaPedro.saca(50.0)
 
     println()
-    contaPedro.transferencia(contaCamila, 800.0)
+    contaPedro.transfere(contaCamila, 800.0)
 
     println()
     mostrarDados(contaCamila)
 
-    if(contaCamila.transferencia(contaPedro,100.0)){
+    if(contaCamila.transfere(contaPedro,100.0)){
         println("Transferência feita com sucesso!")
     } else{
         println("Transferência falhou!")
@@ -68,7 +68,7 @@ class Conta {
         }
     }
 
-    fun transferencia(conta: Conta, valor: Double): Boolean {
+    fun transfere(conta: Conta, valor: Double): Boolean {
         println("Sacando $valor da conta do(a) titular $titular")
         if (saldo >= valor) {
             saldo -= valor
